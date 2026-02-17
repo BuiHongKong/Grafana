@@ -1,0 +1,30 @@
+# Docker Data Directories (Lưu trữ dữ liệu phát sinh, rất nặng)
+**/tempo-data/
+**/mimir-data/
+**/prometheus-data/
+
+# Logs (Chỉ giữ lại thư mục, không commit file log bên trong)
+**/shared/logs/*.log
+**/shared/logs/*.txt
+**/shared/logs/shoehub/*
+!**/shared/logs/.gitkeep
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files (Tránh lộ bí mật nếu có sau này)
+.env
+.env.local
+.env.*.local
