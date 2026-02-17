@@ -1,0 +1,9 @@
+2026-02-17 03:20:12.984 +00:00 [INF] Now listening on: http://[::]:8080
+2026-02-17 03:20:13.021 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-17 03:20:13.022 +00:00 [INF] Hosting environment: Production
+2026-02-17 03:20:13.022 +00:00 [INF] Content root path: /app
+2026-02-17 03:23:20.355 +00:00 [INF] Application is shutting down...
+2026-02-17 03:24:24.420 +00:00 [INF] Now listening on: http://[::]:8080
+2026-02-17 03:24:24.448 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-17 03:24:24.449 +00:00 [INF] Hosting environment: Production
+2026-02-17 03:24:24.450 +00:00 [INF] Content root path: /app

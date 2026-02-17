@@ -1,14 +1,13 @@
 services:
 
   tempo:
-    image: grafana/tempo:latest
+    image: grafana/tempo:2.4.1
     volumes:
-      - ./shared/tempo:/etc
+      - ./shared/tempo/tempo.yml:/etc/tempo/tempo.yml
       - ./tempo-data:/var/tempo
     ports:
       - "3200:3200"
-    command: ["-config.file=/etc/tempo.yml"]
-
+    command: [ "-config.file=/etc/tempo/tempo.yml" ]
 
   prometheus:
     image: prom/prometheus:latest
@@ -16,10 +15,10 @@ services:
       - ./shared/prometheus:/etc/prometheus
     ports:
       - "9090:9090"
-    command: 
-      - "--web.enable-remote-write-receiver" 
+    command:
+      - "--web.enable-remote-write-receiver"
       - "--config.file=/etc/prometheus/prometheus.yml"
-  
+
   mimir:
     image: grafana/mimir:latest
     volumes:
@@ -31,7 +30,6 @@ services:
       - "--config.file=/etc/mimir/config.yaml"
     depends_on:
       - prometheus
-
 
   loki:
     image: grafana/loki:latest
@@ -87,7 +85,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - LOG_PATH=/app/logs/log.txt
     volumes:
-    - ./shared/logs/shoehub:/app/logs:rw
+      - ./shared/logs/shoehub:/app/logs:rw
     depends_on:
       - loki
       - prometheus
@@ -112,7 +110,7 @@ services:
     depends_on:
       - orderservice
       - paymentservice
-      
+
 volumes:
   prometheus-data:
   tempo-data:
